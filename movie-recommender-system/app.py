@@ -8,8 +8,7 @@ with ZipFile("movie-recommender-system/similarity.zip", 'r') as zObject:
   
     # Extracting specific file in the zip
     # into a specific location.
-    zObject.extract(
-        "similarity.pkl", path="("movie-recommender-system")
+    zObject.extract("similarity.pkl", path=("movie-recommender-system"))
 zObject.close()
 def fetch_poster(movie_id):
     response= requests.get('https://api.themoviedb.org/3/movie/{}?api_key=70ac935a984880f2fd11a4196f60e328&language=en-US'.format(movie_id))
