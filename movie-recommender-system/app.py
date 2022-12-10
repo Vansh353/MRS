@@ -3,6 +3,7 @@ import pickle
 import pandas as pd
 import requests
 # loading the temp.zip and creating a zip object
+from zipfile import ZipFile
 with ZipFile("movie-recommender-system/similarity.zip", 'r') as zObject:
   
     # Extracting specific file in the zip
@@ -58,7 +59,7 @@ if st.button('Recommend'):
      with col5:
          st.text(names[4])
          st.image(posters[4])
-from zipfile import ZipFile
+
   
 
 
