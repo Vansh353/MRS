@@ -2,7 +2,14 @@ import streamlit as st
 import pickle
 import pandas as pd
 import requests
-
+# loading the temp.zip and creating a zip object
+with ZipFile("movie-recommender-system/similarity.zip", 'r') as zObject:
+  
+    # Extracting specific file in the zip
+    # into a specific location.
+    zObject.extract(
+        "similarity.pkl", path="("movie-recommender-system")
+zObject.close()
 def fetch_poster(movie_id):
     response= requests.get('https://api.themoviedb.org/3/movie/{}?api_key=70ac935a984880f2fd11a4196f60e328&language=en-US'.format(movie_id))
     data = response.json()
@@ -51,6 +58,8 @@ if st.button('Recommend'):
      with col5:
          st.text(names[4])
          st.image(posters[4])
+from zipfile import ZipFile
+  
 
 
 
